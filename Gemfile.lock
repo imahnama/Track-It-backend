@@ -156,7 +156,6 @@ GEM
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
       rspec-mocks (~> 3.9.0)
-      rspec-support (~> 3.9.0)
     rspec-support (3.9.4)
     rubocop (0.81.0)
       jaro_winkler (~> 1.5.1)
