@@ -4,35 +4,35 @@ class ActivitiesController < ApplicationController
   def index
     @activities = Activity.all
     # json_response(@activities)
-    render json:{activity: @activities}
+    render json: { activity: @activities }
   end
 
-    def create
-      @activity = Activity.create!(activity_params)
-      json_response(@activity, :created)
-    end
+  def create
+    @activity = Activity.create!(activity_params)
+    json_response(@activity, :created)
+  end
 
-    def show
-      json_response(@activity)
-    end
+  def show
+    json_response(@activity)
+  end
 
-    def update
-      @activity.update(activity_params)
-      json_response(@activity)
-    end
+  def update
+    @activity.update(activity_params)
+    json_response(@activity)
+  end
 
-    def destroy
-      @activity.destroy
-      head :no_content
-    end
+  def destroy
+    @activity.destroy
+    head :no_content
+  end
 
-    private
+  private
 
-    def set_activity
-     @activity = Activity.find(params[:id])
-    end
+  def set_activity
+    @activity = Activity.find(params[:id])
+  end
 
-   def activity_params
-     params.permit(:title, :total)
-   end
+  def activity_params
+    params.permit(:title, :total)
+  end
 end

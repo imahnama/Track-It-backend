@@ -45,7 +45,6 @@ RSpec.configure do |config|
   config.include RequestSpecHelper
   config.include ControllerSpecHelper
 
-
   config.include FactoryBot::Syntax::Methods
 
   config.before(:suite) do
