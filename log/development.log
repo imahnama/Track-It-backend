@@ -4794,3 +4794,32 @@ Processing by ActivitiesController#index as HTML
 Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.5ms | Allocations: 1652)
 
 
+  [1m[35m (261.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (249.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (239.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2433200432899550685)[0m
+  [1m[35m (241.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActivities (20201221120621)
+  [1m[35m (238.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (249.1ms)[0m  [1m[35mCREATE TABLE "activities" ("id" bigserial primary key, "total" character varying, "title" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (237.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201221120621"]]
+  [1m[35m (238.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMeasurements (20201221120721)
+  [1m[35m (236.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (261.6ms)[0m  [1m[35mCREATE TABLE "measurements" ("id" bigserial primary key, "duration" decimal, "date" character varying, "activity_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_bfba69aa97"
+FOREIGN KEY ("activity_id")
+  REFERENCES "activities" ("id")
+)[0m
+  [1m[35m (242.1ms)[0m  [1m[35mCREATE  INDEX  "index_measurements_on_activity_id" ON "measurements"  ("activity_id")[0m
+  [1m[36mprimary::SchemaMigration Create (240.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201221120721"]]
+  [1m[35m (238.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20201221121203)
+  [1m[35m (236.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (246.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (237.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201221121203"]]
+  [1m[35m (238.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (241.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (237.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (236.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-01-16 20:45:34.036664"], ["updated_at", "2021-01-16 20:45:34.036664"]]
+  [1m[35m (239.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (236.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(2433200432899550685)[0m
+  [1m[35m (237.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
