@@ -11,6 +11,10 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2020_12_21_121203) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "activities", force: :cascade do |t|
     t.string "total"
     t.string "title"
@@ -21,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_12_21_121203) do
   create_table "measurements", force: :cascade do |t|
     t.decimal "duration"
     t.string "date"
-    t.integer "activity_id", null: false
+    t.bigint "activity_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["activity_id"], name: "index_measurements_on_activity_id"
