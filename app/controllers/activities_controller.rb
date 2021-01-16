@@ -3,8 +3,8 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
-    # json_response(@activities)
-    render json: { activity: @activities }
+    json_response(@activities)
+    # render json: { activity: @activities }
   end
 
   def create
