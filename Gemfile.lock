@@ -103,6 +103,7 @@ GEM
     parallel (1.20.1)
     parser (3.0.0.0)
       ast (~> 2.4.1)
+    pg (1.2.3)
     puma (4.3.7)
       nio4r (~> 2.0)
     rack (2.2.3)
@@ -202,6 +203,7 @@ DEPENDENCIES
   faker
   jwt
   listen (~> 3.2)
+  pg
   puma (~> 4.1)
   rack-cors (~> 0.3.1)
   rails (~> 6.0.3, >= 6.0.3.4)
@@ -210,7 +212,7 @@ DEPENDENCIES
   shoulda-matchers (~> 3.1)
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
+  sqlite3
   tzinfo-data
 
 RUBY VERSION
