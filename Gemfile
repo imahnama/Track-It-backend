@@ -5,7 +5,6 @@ gem 'rubocop', '~>0.81.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
-# Use sqlite3 as the database for Active Record
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
