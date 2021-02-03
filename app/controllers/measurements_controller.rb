@@ -1,5 +1,4 @@
 class MeasurementsController < ApplicationController
-  skip_before_action :verify_authenticity_token
   before_action :set_activity
   before_action :set_activity_measurement, only: %i[show update destroy]
 
