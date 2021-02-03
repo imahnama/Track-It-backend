@@ -6193,3 +6193,50 @@ Processing by ActivitiesController#index as HTML
 Completed 200 OK in 1044ms (Views: 2.3ms | ActiveRecord: 1040.4ms | Allocations: 2466)
 
 
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (294.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (287.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 964ms (Views: 92.7ms | ActiveRecord: 582.3ms | Allocations: 2471)
+
+
+Started POST "/authentication" for ::1 at 2021-02-03 14:55:31 +0300
+  [1m[35m (289.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#create as HTML
+  Parameters: {"email"=>"nama@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"nama@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (341.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nama@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:18:in `user'
+Completed 500 Internal Server Error in 2584ms (ActiveRecord: 1937.7ms | Allocations: 7311)
+
+
+  
+NoMethodError (undefined method `HMAC_SECRET' for #<Object:0x00007f8ad3888578>):
+  
+app/lib/json_web_token.rb:4:in `<class:JsonWebToken>'
+app/lib/json_web_token.rb:1:in `<main>'
+app/auth/authenticate_user.rb:9:in `call'
+app/controllers/authentication_controller.rb:6:in `create'
+Started POST "/authentication" for ::1 at 2021-02-03 14:57:36 +0300
+Processing by AuthenticationController#create as HTML
+  Parameters: {"email"=>"nama@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"nama@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (300.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nama@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:18:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nama@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:18:in `user'
+Completed 200 OK in 1781ms (Views: 0.4ms | ActiveRecord: 1213.9ms | Allocations: 6434)
+
+
+Started GET "/activities" for ::1 at 2021-02-03 14:57:39 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (290.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (291.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 1511ms (Views: 11.3ms | ActiveRecord: 1194.1ms | Allocations: 7103)
+
+
