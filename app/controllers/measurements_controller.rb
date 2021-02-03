@@ -17,7 +17,7 @@ class MeasurementsController < ApplicationController
 
   def update
     @measurement.update(measurement_params)
-    head :no_content
+    json_response(@activity, :updated)
   end
 
   def destroy

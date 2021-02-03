@@ -4823,3 +4823,1032 @@ Migrating to CreateUsers (20201221121203)
   [1m[35m (239.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (236.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(2433200432899550685)[0m
   [1m[35m (237.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-02-02 10:27:27 +0300
+  [1m[35m (315.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/rahmahalane/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/rahmahalane/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 15.8ms | Allocations: 309)
+Completed 200 OK in 27ms (Views: 22.9ms | ActiveRecord: 0.0ms | Allocations: 1616)
+
+
+Started GET "/favicon.ico" for ::1 at 2021-02-02 10:27:33 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack-cors (0.3.1) lib/rack/cors.rb:72:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "//auth/login" for ::1 at 2021-02-02 10:28:01 +0300
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"raj@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"raj@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (297.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raj@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:18:in `user'
+Completed 401 Unauthorized in 2538ms (Views: 1.1ms | ActiveRecord: 1800.6ms | Allocations: 6562)
+
+
+Started POST "//auth/login" for ::1 at 2021-02-02 10:28:25 +0300
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"rahma@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"rahma@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (295.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rahma@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:18:in `user'
+Completed 401 Unauthorized in 722ms (Views: 0.3ms | ActiveRecord: 295.9ms | Allocations: 884)
+
+
+Started POST "//auth/login" for ::1 at 2021-02-02 10:29:05 +0300
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"rahma@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"rahma@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (311.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rahma@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:18:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rahma@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:18:in `user'
+Completed 200 OK in 982ms (Views: 0.2ms | ActiveRecord: 311.0ms | Allocations: 3208)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:29:07 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (303.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (306.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 1235ms (Views: 7.3ms | ActiveRecord: 924.0ms | Allocations: 3186)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:31:25 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (285.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (293.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 626ms (Views: 19.2ms | ActiveRecord: 579.4ms | Allocations: 1537)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:31:39 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (297.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (298.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 600ms (Views: 1.9ms | ActiveRecord: 595.7ms | Allocations: 1559)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:31:47 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (298.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (287.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 593ms (Views: 2.9ms | ActiveRecord: 586.2ms | Allocations: 1539)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:32:45 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (293.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (294.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 592ms (Views: 2.2ms | ActiveRecord: 587.9ms | Allocations: 1537)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:32:53 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (292.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (283.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 582ms (Views: 3.7ms | ActiveRecord: 576.2ms | Allocations: 1537)
+
+
+Started POST "//activities" for ::1 at 2021-02-02 10:33:41 +0300
+Processing by ActivitiesController#create as HTML
+  Parameters: {"title"=>"Morning Run", "total"=>"2", "activity"=>{"total"=>"2", "title"=>"Morning Run"}}
+  [1m[36mUser Load (301.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+[31mUnpermitted parameter: :activity[0m
+  [1m[35m (287.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:11:in `create'
+  [1m[36mActivity Create (296.3ms)[0m  [1m[32mINSERT INTO "activities" ("total", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["total", "2"], ["title", "Morning Run"], ["created_at", "2021-02-02 07:33:42.496974"], ["updated_at", "2021-02-02 07:33:42.496974"]]
+  ↳ app/controllers/activities_controller.rb:11:in `create'
+  [1m[35m (302.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:11:in `create'
+Completed 201 Created in 1511ms (Views: 1.9ms | ActiveRecord: 1485.0ms | Allocations: 6585)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:33:43 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (319.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (300.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 625ms (Views: 2.0ms | ActiveRecord: 620.1ms | Allocations: 1660)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:33:44 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (315.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (291.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 621ms (Views: 2.5ms | ActiveRecord: 607.3ms | Allocations: 1653)
+
+
+Started POST "//activities/1/measurements" for ::1 at 2021-02-02 10:34:08 +0300
+Started GET "//activities/1/measurements" for ::1 at 2021-02-02 10:34:08 +0300
+Processing by MeasurementsController#create as HTML
+  Parameters: {"duration"=>"0.00", "date"=>"2021-02-02T07:34:08.731Z", "activity_id"=>"1", "measurement"=>{"duration"=>"0.00", "date"=>"2021-02-02T07:34:08.731Z"}}
+  [1m[36mUser Load (280.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (287.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+[31mUnpermitted parameters: :activity_id, :measurement[0m
+  [1m[35m (306.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/measurements_controller.rb:14:in `create'
+  [1m[36mMeasurement Create (303.0ms)[0m  [1m[32mINSERT INTO "measurements" ("duration", "date", "activity_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["duration", "0.0"], ["date", "2021-02-02T07:34:08.731Z"], ["activity_id", 1], ["created_at", "2021-02-02 07:34:10.615240"], ["updated_at", "2021-02-02 07:34:10.615240"]]
+  ↳ app/controllers/measurements_controller.rb:14:in `create'
+  [1m[35m (312.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/measurements_controller.rb:14:in `create'
+Completed 201 Created in 2132ms (Views: 0.8ms | ActiveRecord: 2093.1ms | Allocations: 10174)
+
+
+Started GET "//activities/1/measurements" for ::1 at 2021-02-02 10:34:11 +0300
+Processing by MeasurementsController#index as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[36mUser Load (277.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (321.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+Processing by MeasurementsController#index as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[36mMeasurement Load (289.3ms)[0m  [1m[34mSELECT "measurements".* FROM "measurements" WHERE "measurements"."activity_id" = $1[0m  [["activity_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 1197ms (Views: 305.2ms | ActiveRecord: 887.8ms | Allocations: 4722)
+
+
+  [1m[36mUser Load (282.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (285.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+  [1m[36mMeasurement Load (285.0ms)[0m  [1m[34mSELECT "measurements".* FROM "measurements" WHERE "measurements"."activity_id" = $1[0m  [["activity_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 2020ms (Views: 297.0ms | ActiveRecord: 1127.5ms | Allocations: 3688)
+
+
+Started GET "//activities/1/measurements" for ::1 at 2021-02-02 10:35:15 +0300
+Processing by MeasurementsController#index as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[36mUser Load (283.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (297.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+  [1m[36mMeasurement Load (279.5ms)[0m  [1m[34mSELECT "measurements".* FROM "measurements" WHERE "measurements"."activity_id" = $1[0m  [["activity_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 867ms (Views: 3.1ms | ActiveRecord: 859.9ms | Allocations: 2375)
+
+
+Started POST "//activities/1/measurements" for ::1 at 2021-02-02 10:35:28 +0300
+Started GET "//activities/1/measurements" for ::1 at 2021-02-02 10:35:28 +0300
+Processing by MeasurementsController#create as HTML
+  Parameters: {"duration"=>"0.00", "date"=>"2021-02-02T07:35:28.520Z", "activity_id"=>"1", "measurement"=>{"duration"=>"0.00", "date"=>"2021-02-02T07:35:28.520Z"}}
+Processing by MeasurementsController#index as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[36mUser Load (290.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mUser Load (296.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (285.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+[31mUnpermitted parameters: :activity_id, :measurement[0m
+  [1m[36mActivity Load (302.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+  [1m[35m (305.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/measurements_controller.rb:14:in `create'
+  [1m[36mMeasurement Load (282.9ms)[0m  [1m[34mSELECT "measurements".* FROM "measurements" WHERE "measurements"."activity_id" = $1[0m  [["activity_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 892ms (Views: 5.2ms | ActiveRecord: 881.8ms | Allocations: 4988)
+
+
+  [1m[36mMeasurement Create (310.4ms)[0m  [1m[32mINSERT INTO "measurements" ("duration", "date", "activity_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["duration", "0.0"], ["date", "2021-02-02T07:35:28.520Z"], ["activity_id", 1], ["created_at", "2021-02-02 07:35:29.421291"], ["updated_at", "2021-02-02 07:35:29.421291"]]
+  ↳ app/controllers/measurements_controller.rb:14:in `create'
+  [1m[35m (282.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/measurements_controller.rb:14:in `create'
+Completed 201 Created in 1487ms (Views: 0.8ms | ActiveRecord: 1474.0ms | Allocations: 7355)
+
+
+Started GET "//activities/1/measurements" for ::1 at 2021-02-02 10:35:30 +0300
+Processing by MeasurementsController#index as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[36mUser Load (304.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (332.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+  [1m[36mMeasurement Load (295.7ms)[0m  [1m[34mSELECT "measurements".* FROM "measurements" WHERE "measurements"."activity_id" = $1[0m  [["activity_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 941ms (Views: 3.3ms | ActiveRecord: 932.3ms | Allocations: 2510)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:35:35 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (298.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (281.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 587ms (Views: 2.3ms | ActiveRecord: 580.1ms | Allocations: 1653)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:35:53 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (289.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (297.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 591ms (Views: 2.0ms | ActiveRecord: 587.0ms | Allocations: 1652)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:36:06 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (280.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (291.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 580ms (Views: 4.3ms | ActiveRecord: 571.6ms | Allocations: 1655)
+
+
+Started POST "//activities" for ::1 at 2021-02-02 10:36:20 +0300
+Processing by ActivitiesController#create as HTML
+  Parameters: {"title"=>"Morning Run", "total"=>"3", "activity"=>{"total"=>"3", "title"=>"Morning Run"}}
+  [1m[36mUser Load (296.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+[31mUnpermitted parameter: :activity[0m
+  [1m[35m (283.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:11:in `create'
+  [1m[36mActivity Create (296.0ms)[0m  [1m[32mINSERT INTO "activities" ("total", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["total", "3"], ["title", "Morning Run"], ["created_at", "2021-02-02 07:36:21.399785"], ["updated_at", "2021-02-02 07:36:21.399785"]]
+  ↳ app/controllers/activities_controller.rb:11:in `create'
+  [1m[35m (288.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:11:in `create'
+Completed 201 Created in 1175ms (Views: 0.6ms | ActiveRecord: 1164.5ms | Allocations: 3305)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:36:22 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (287.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (282.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 575ms (Views: 2.3ms | ActiveRecord: 570.4ms | Allocations: 1769)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:36:23 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (292.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (284.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 583ms (Views: 2.8ms | ActiveRecord: 576.5ms | Allocations: 1772)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:36:34 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (297.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (290.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 595ms (Views: 3.4ms | ActiveRecord: 587.9ms | Allocations: 1769)
+
+
+Started POST "//activities/2/measurements" for ::1 at 2021-02-02 10:36:40 +0300
+Started GET "//activities/2/measurements" for ::1 at 2021-02-02 10:36:40 +0300
+Processing by MeasurementsController#create as HTML
+  Parameters: {"duration"=>"0.00", "date"=>"2021-02-02T07:36:40.526Z", "activity_id"=>"2", "measurement"=>{"duration"=>"0.00", "date"=>"2021-02-02T07:36:40.526Z"}}
+Processing by MeasurementsController#index as HTML
+  Parameters: {"activity_id"=>"2"}
+  [1m[36mUser Load (274.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mUser Load (296.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (287.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+[31mUnpermitted parameters: :activity_id, :measurement[0m
+  [1m[36mActivity Load (295.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+  [1m[35m (276.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/measurements_controller.rb:14:in `create'
+  [1m[36mMeasurement Load (282.0ms)[0m  [1m[34mSELECT "measurements".* FROM "measurements" WHERE "measurements"."activity_id" = $1[0m  [["activity_id", 2]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 885ms (Views: 4.9ms | ActiveRecord: 874.6ms | Allocations: 4853)
+
+
+  [1m[36mMeasurement Create (291.2ms)[0m  [1m[32mINSERT INTO "measurements" ("duration", "date", "activity_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["duration", "0.0"], ["date", "2021-02-02T07:36:40.526Z"], ["activity_id", 2], ["created_at", "2021-02-02 07:36:41.431790"], ["updated_at", "2021-02-02 07:36:41.431790"]]
+  ↳ app/controllers/measurements_controller.rb:14:in `create'
+  [1m[35m (292.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/measurements_controller.rb:14:in `create'
+Completed 201 Created in 1447ms (Views: 0.6ms | ActiveRecord: 1422.0ms | Allocations: 7225)
+
+
+Started GET "//activities/2/measurements" for ::1 at 2021-02-02 10:36:42 +0300
+Processing by MeasurementsController#index as HTML
+  Parameters: {"activity_id"=>"2"}
+  [1m[36mUser Load (287.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (291.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+  [1m[36mMeasurement Load (294.8ms)[0m  [1m[34mSELECT "measurements".* FROM "measurements" WHERE "measurements"."activity_id" = $1[0m  [["activity_id", 2]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 881ms (Views: 3.7ms | ActiveRecord: 873.5ms | Allocations: 2375)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:36:51 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (301.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (282.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 590ms (Views: 2.6ms | ActiveRecord: 584.5ms | Allocations: 1769)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:37:07 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (302.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (288.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 597ms (Views: 3.2ms | ActiveRecord: 591.1ms | Allocations: 1769)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:37:11 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (283.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (287.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 577ms (Views: 2.3ms | ActiveRecord: 571.2ms | Allocations: 1771)
+
+
+Started GET "//activities" for ::1 at 2021-02-02 10:37:23 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (291.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (312.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 610ms (Views: 2.9ms | ActiveRecord: 604.2ms | Allocations: 1769)
+
+
+Started POST "//auth/login" for ::1 at 2021-02-03 07:36:52 +0300
+  
+NameError (undefined local variable or method `create' for #<ActionDispatch::Routing::Mapper:0x00007ff5d9549fa8>):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started POST "//auth/login" for ::1 at 2021-02-03 07:37:45 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/auth/login"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack-cors (0.3.1) lib/rack/cors.rb:72:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "//create" for ::1 at 2021-02-03 07:53:29 +0300
+  [1m[35m (227.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/create"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack-cors (0.3.1) lib/rack/cors.rb:72:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "//create" for ::1 at 2021-02-03 07:53:54 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/create"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack-cors (0.3.1) lib/rack/cors.rb:72:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "//create" for ::1 at 2021-02-03 07:54:19 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/create"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack-cors (0.3.1) lib/rack/cors.rb:72:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "//create" for ::1 at 2021-02-03 07:55:01 +0300
+  
+NameError (undefined local variable or method `create' for #<ActionDispatch::Routing::Mapper:0x00007f7f7ed45300>):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started POST "//create" for ::1 at 2021-02-03 10:55:03 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/create"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack-cors (0.3.1) lib/rack/cors.rb:72:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "//signup" for ::1 at 2021-02-03 10:55:27 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack-cors (0.3.1) lib/rack/cors.rb:72:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/create" for ::1 at 2021-02-03 12:24:19 +0300
+  [1m[35m (287.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/create"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack-cors (0.3.1) lib/rack/cors.rb:72:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users/create" for ::1 at 2021-02-03 12:25:48 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/users/create"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack-cors (0.3.1) lib/rack/cors.rb:72:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2021-02-03 12:27:03 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack-cors (0.3.1) lib/rack/cors.rb:72:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/activities" for ::1 at 2021-02-03 12:27:19 +0300
+Processing by ActivitiesController#index as */*
+  Parameters: {"email"=>"hamda@gmail.com", "password"=>"[FILTERED]"}
+Completed 422 Unprocessable Entity in 4ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 433)
+
+
+Started GET "/auth" for ::1 at 2021-02-03 12:28:56 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/auth"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack-cors (0.3.1) lib/rack/cors.rb:72:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/authentication" for ::1 at 2021-02-03 12:29:08 +0300
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for AuthenticationController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack-cors (0.3.1) lib/rack/cors.rb:72:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/authentication" for ::1 at 2021-02-03 12:30:27 +0300
+  
+NameError (undefined local variable or method `create' for #<ActionDispatch::Routing::Mapper:0x00007fad8f674fa0>):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/authentication" for ::1 at 2021-02-03 12:31:46 +0300
+  
+NameError (undefined local variable or method `authenticate' for #<ActionDispatch::Routing::Mapper:0x00007fad8daada38>):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/authentication" for ::1 at 2021-02-03 12:33:30 +0300
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for AuthenticationController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack-cors (0.3.1) lib/rack/cors.rb:72:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/authentication" for ::1 at 2021-02-03 12:33:41 +0300
+Processing by AuthenticationController#create as */*
+  Parameters: {"email"=>"hamda@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (287.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hamda@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:18:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hamda@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:18:in `user'
+Completed 200 OK in 2708ms (Views: 0.6ms | ActiveRecord: 1722.3ms | Allocations: 6989)
+
+
+Started POST "/authentication" for ::1 at 2021-02-03 12:35:03 +0300
+Processing by AuthenticationController#create as */*
+  Parameters: {"email"=>"hamda@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (292.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hamda@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:18:in `user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hamda@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:18:in `user'
+Completed 200 OK in 1900ms (Views: 0.2ms | ActiveRecord: 1184.0ms | Allocations: 6191)
+
+
+Started POST "/authentication" for ::1 at 2021-02-03 12:37:26 +0300
+Processing by AuthenticationController#create as HTML
+  Parameters: {"email"=>"nama@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"nama@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (289.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nama@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:18:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nama@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:18:in `user'
+Completed 200 OK in 767ms (Views: 0.1ms | ActiveRecord: 289.2ms | Allocations: 1472)
+
+
+Started GET "/activities" for ::1 at 2021-02-03 12:37:27 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (307.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (301.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 1493ms (Views: 13.4ms | ActiveRecord: 1189.5ms | Allocations: 6409)
+
+
+Started POST "/activities/1/measurements" for ::1 at 2021-02-03 12:39:36 +0300
+Started GET "/activities/1/measurements" for ::1 at 2021-02-03 12:39:36 +0300
+Processing by MeasurementsController#create as HTML
+  Parameters: {"duration"=>"0.00", "date"=>"2021-02-03T09:39:36.485Z", "activity_id"=>"1", "measurement"=>{"duration"=>"0.00", "date"=>"2021-02-03T09:39:36.485Z"}}
+  [1m[36mUser Load (287.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (274.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+[31mUnpermitted parameters: :activity_id, :measurement[0m
+  [1m[35m (281.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/measurements_controller.rb:14:in `create'
+  [1m[36mMeasurement Create (292.0ms)[0m  [1m[32mINSERT INTO "measurements" ("duration", "date", "activity_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["duration", "0.0"], ["date", "2021-02-03T09:39:36.485Z"], ["activity_id", 1], ["created_at", "2021-02-03 09:39:40.174231"], ["updated_at", "2021-02-03 09:39:40.174231"]]
+  ↳ app/controllers/measurements_controller.rb:14:in `create'
+  [1m[35m (283.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/measurements_controller.rb:14:in `create'
+Completed 201 Created in 3219ms (Views: 0.6ms | ActiveRecord: 3456.3ms | Allocations: 18856)
+
+
+Started GET "/activities/1/measurements" for ::1 at 2021-02-03 12:39:41 +0300
+Processing by MeasurementsController#index as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[36mUser Load (280.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (287.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+  [1m[36mMeasurement Load (282.2ms)[0m  [1m[34mSELECT "measurements".* FROM "measurements" WHERE "measurements"."activity_id" = $1[0m  [["activity_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 3276ms (Views: 304.4ms | ActiveRecord: 2950.8ms | Allocations: 17892)
+
+
+Processing by MeasurementsController#index as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[36mUser Load (281.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (299.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+  [1m[36mMeasurement Load (290.9ms)[0m  [1m[34mSELECT "measurements".* FROM "measurements" WHERE "measurements"."activity_id" = $1[0m  [["activity_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 2014ms (Views: 297.1ms | ActiveRecord: 1143.5ms | Allocations: 2758)
+
+
+Started GET "/activities/1/measurements" for ::1 at 2021-02-03 12:41:51 +0300
+Processing by MeasurementsController#index as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[36mUser Load (309.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (279.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+  [1m[36mMeasurement Load (275.7ms)[0m  [1m[34mSELECT "measurements".* FROM "measurements" WHERE "measurements"."activity_id" = $1[0m  [["activity_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 900ms (Views: 14.9ms | ActiveRecord: 864.6ms | Allocations: 2639)
+
+
+Started GET "/activities/1/measurements" for ::1 at 2021-02-03 12:46:19 +0300
+Processing by MeasurementsController#index as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[36mUser Load (283.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+Started GET "/activities/1/measurements" for ::1 at 2021-02-03 12:46:19 +0300
+  [1m[36mActivity Load (291.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+  [1m[36mMeasurement Load (304.8ms)[0m  [1m[34mSELECT "measurements".* FROM "measurements" WHERE "measurements"."activity_id" = $1[0m  [["activity_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 952ms (Views: 23.2ms | ActiveRecord: 879.9ms | Allocations: 3226)
+
+
+Processing by MeasurementsController#index as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[36mUser Load (281.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (287.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+  [1m[36mMeasurement Load (290.2ms)[0m  [1m[34mSELECT "measurements".* FROM "measurements" WHERE "measurements"."activity_id" = $1[0m  [["activity_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 2044ms (Views: 303.0ms | ActiveRecord: 1138.8ms | Allocations: 2757)
+
+
+Started POST "/activities/1/measurements" for ::1 at 2021-02-03 12:46:30 +0300
+Started GET "/activities/1/measurements" for ::1 at 2021-02-03 12:46:30 +0300
+Processing by MeasurementsController#index as HTML
+  Parameters: {"activity_id"=>"1"}
+Processing by MeasurementsController#create as HTML
+  Parameters: {"duration"=>"0.00", "date"=>"2021-02-03T09:46:30.335Z", "activity_id"=>"1", "measurement"=>{"duration"=>"0.00", "date"=>"2021-02-03T09:46:30.335Z"}}
+  [1m[36mUser Load (307.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mUser Load (290.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (294.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+  [1m[36mActivity Load (289.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+[31mUnpermitted parameters: :activity_id, :measurement[0m
+  [1m[36mMeasurement Load (301.8ms)[0m  [1m[34mSELECT "measurements".* FROM "measurements" WHERE "measurements"."activity_id" = $1[0m  [["activity_id", 1]]
+  [1m[35m (292.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/measurements_controller.rb:14:in `create'
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 931ms (Views: 12.9ms | ActiveRecord: 904.0ms | Allocations: 5947)
+
+
+  [1m[36mMeasurement Create (292.8ms)[0m  [1m[32mINSERT INTO "measurements" ("duration", "date", "activity_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["duration", "0.0"], ["date", "2021-02-03T09:46:30.335Z"], ["activity_id", 1], ["created_at", "2021-02-03 09:46:31.282573"], ["updated_at", "2021-02-03 09:46:31.282573"]]
+  ↳ app/controllers/measurements_controller.rb:14:in `create'
+  [1m[35m (292.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/measurements_controller.rb:14:in `create'
+Completed 201 Created in 1531ms (Views: 0.4ms | ActiveRecord: 1456.9ms | Allocations: 7161)
+
+
+Started GET "/activities/1/measurements" for ::1 at 2021-02-03 12:46:32 +0300
+Processing by MeasurementsController#index as HTML
+  Parameters: {"activity_id"=>"1"}
+  [1m[36mUser Load (300.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (302.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/measurements_controller.rb:35:in `set_activity'
+  [1m[36mMeasurement Load (293.7ms)[0m  [1m[34mSELECT "measurements".* FROM "measurements" WHERE "measurements"."activity_id" = $1[0m  [["activity_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 904ms (Views: 3.8ms | ActiveRecord: 896.6ms | Allocations: 2773)
+
+
+Started GET "/activities" for ::1 at 2021-02-03 12:47:28 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (288.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (276.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 569ms (Views: 2.2ms | ActiveRecord: 565.0ms | Allocations: 1812)
+
+
+Started POST "/activities" for ::1 at 2021-02-03 12:47:43 +0300
+Processing by ActivitiesController#create as HTML
+  Parameters: {"title"=>"New activity", "total"=>"2", "activity"=>{"total"=>"2", "title"=>"New activity"}}
+  [1m[36mUser Load (291.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+[31mUnpermitted parameter: :activity[0m
+  [1m[35m (279.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:11:in `create'
+  [1m[36mActivity Create (310.6ms)[0m  [1m[32mINSERT INTO "activities" ("total", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["total", "2"], ["title", "New activity"], ["created_at", "2021-02-03 09:47:44.358502"], ["updated_at", "2021-02-03 09:47:44.358502"]]
+  ↳ app/controllers/activities_controller.rb:11:in `create'
+  [1m[35m (284.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:11:in `create'
+Completed 201 Created in 1172ms (Views: 0.3ms | ActiveRecord: 1165.7ms | Allocations: 3415)
+
+
+Started GET "/activities" for ::1 at 2021-02-03 12:47:45 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (287.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (295.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 586ms (Views: 1.6ms | ActiveRecord: 582.8ms | Allocations: 1887)
+
+
+Started GET "/activities" for ::1 at 2021-02-03 12:47:46 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (280.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (311.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 597ms (Views: 2.7ms | ActiveRecord: 592.4ms | Allocations: 1885)
+
+
+Started GET "/activities" for ::1 at 2021-02-03 12:49:23 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (283.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (299.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 603ms (Views: 6.4ms | ActiveRecord: 582.9ms | Allocations: 1887)
+
+
+Started POST "/activities" for ::1 at 2021-02-03 12:49:36 +0300
+Processing by ActivitiesController#create as HTML
+  Parameters: {"title"=>"New activity 1", "total"=>"3", "activity"=>{"total"=>"3", "title"=>"New activity 1"}}
+  [1m[36mUser Load (284.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+[31mUnpermitted parameter: :activity[0m
+  [1m[35m (277.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/activities_controller.rb:11:in `create'
+  [1m[36mActivity Create (295.9ms)[0m  [1m[32mINSERT INTO "activities" ("total", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["total", "3"], ["title", "New activity 1"], ["created_at", "2021-02-03 09:49:36.604892"], ["updated_at", "2021-02-03 09:49:36.604892"]]
+  ↳ app/controllers/activities_controller.rb:11:in `create'
+  [1m[35m (292.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/activities_controller.rb:11:in `create'
+Completed 201 Created in 1160ms (Views: 0.4ms | ActiveRecord: 1150.1ms | Allocations: 3304)
+
+
+Started GET "/activities" for ::1 at 2021-02-03 12:49:37 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (280.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (302.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 588ms (Views: 3.0ms | ActiveRecord: 583.0ms | Allocations: 2004)
+
+
+Started GET "/activities" for ::1 at 2021-02-03 12:49:38 +0300
+Processing by ActivitiesController#index as HTML
+  [1m[36mUser Load (288.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:20:in `user'
+  [1m[36mActivity Load (296.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 589ms (Views: 1.7ms | ActiveRecord: 585.1ms | Allocations: 2002)
+
+
